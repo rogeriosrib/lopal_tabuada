@@ -31,7 +31,7 @@ public class Tabuada {
 		this.maiorMultiplicador = maiorMultiplicador;
 	}
 
-	public void exibirTabuada() {
+	public String[] exibirTabuada() {
 		if (menorMultiplicador > maiorMultiplicador) {
 			double temp = maiorMultiplicador;
 			maiorMultiplicador = menorMultiplicador;
@@ -43,12 +43,18 @@ public class Tabuada {
 		
 		String tabuada[] = new String[tamanhoVetor];
 		
+		int i = 0;
 		while(menorMultiplicador <= maiorMultiplicador) {
 			double produto = multiplicando * menorMultiplicador;
-			System.out.printf("%s X %s = %s\n" , multiplicando, menorMultiplicador, produto);
+			// multiplicando x menorMultiplicador = produto
+			tabuada[i] = multiplicando + " X " + menorMultiplicador + " = " + produto;
+			//System.out.printf("%s X %s = %s\n" , multiplicando, menorMultiplicador, produto);
 			menorMultiplicador++;
-			
+			i++;
 		}
+		
+		return tabuada;
+		
 	}
 
 }
